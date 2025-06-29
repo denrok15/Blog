@@ -3,6 +3,7 @@ export default function MainPage() {
         <>
             <a href="/login"><h2>ПРИВЕТ ГО ЛОГИН</h2></a>
             <a href="/registr"><h2>ПРИВЕТ ГО РЕГИСТР</h2></a>
+            <a href="/profile">ЗАХОДИ В ПРОФИЛЬ</a>
         </>
     )
 }
