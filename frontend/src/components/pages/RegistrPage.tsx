@@ -25,7 +25,7 @@ export default function RegistrPage() {
                     placeholder="Логин"
                     value={loginInput}
                     onChange={(e) => setLoginInput(e.target.value)}
-                    className="block border rounded-xl mt-5 p-2"
+                     className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
                     required
                 />
                 <input
@@ -33,13 +33,13 @@ export default function RegistrPage() {
                     placeholder="Пароль"
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
-                    className="block border rounded-xl mt-5 p-2"
+                     className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
                     required
                 />
-                <button type="submit" className="w-full mt-7 p-2 border rounded-2xl bg-green-400">
+                <button type="submit" className={'text-xl w-full mt-5 p-2 border rounded-2xl bg-green-400 hover:bg-green-500 transition ease-in'}>
                     Зарегистрироваться
                 </button>
-                <p className="text-center text-lg mt-5">
+                <p className={'text-center text-lg mt-5 hover:text-green-600 transition ease-in'}>
                     <a href="/login">Уже есть аккаунт? Войти</a>
                 </p>
             </form>

@@ -1,0 +1,23 @@
+# JetBrains IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE specific
+.shelf/
+workspace.xml
+httpRequests/
+dataSources/
+dataSources.local.xml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+env/
+
+# Node
+node_modules/

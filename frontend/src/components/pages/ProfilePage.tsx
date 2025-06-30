@@ -1,17 +1,29 @@
 import {useAuthStore} from "../store/AuthStore.ts";
 import {useUserStore} from "../store/UserStore.ts";
+import {useNavigate} from "react-router";
 
 export default function ProfilePage() {
     const {login, email} = useAuthStore()
-    const {bio,name,birthday,location,phone,gender} = useUserStore()
+    const {bio,name,birthday,location,phone,gender,setBio,setName,setGender,setBirthday,setPhone,setLocation} = useUserStore()
+    const logout = () => {
+        setBio('')
+        setLocation('')
+        setName('')
+        setBirthday('')
+        setGender('')
+        setPhone('')
+        navigate('/')
+
+    }
+    const navigate = useNavigate();
     return (
         <>
             <div className={'flex justify-center bg-amber-50/60 mr-40 ml-40 '}>
                 <div>
                     <div className={'bg-blue-100 h-3/4 w-full'}>
                         <a href="/change">Редактировать профиль</a>
-
                     </div>
+                    <button onClick={logout}>Выйти из аккаунта</button>
                     <h2>{login}</h2>
 
                 </div>
