@@ -25,9 +25,7 @@ export default function Header() {
                             <div className={`cursor-pointer ${select === 2? 'border-[#3328BF] border-b-2 ':null }  hover:text-[#3328BF] transition`}>Документация</div>
                     </button>
                     <button onClick={() => setSelect(3)}>
-
                             <div className={`cursor-pointer ${select === 3? 'border-b-2 border-[#3328BF]':null}   hover:text-[#3328BF] transition`}>Настройки</div>
-
                     </button>
 
                 </div>

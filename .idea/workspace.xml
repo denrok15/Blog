@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="14c92c53-c8b9-417c-857c-8fb95d2fe937" name="Changes" comment="init fastapi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/СhangeProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/СhangeProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/items/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/items/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/store/DarLightTheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/store/ThemeStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +110,7 @@
       <workItem from="1751265274836" duration="3419000" />
       <workItem from="1751276152546" duration="3225000" />
       <workItem from="1751299113935" duration="11911000" />
-      <workItem from="1751359588219" duration="2268000" />
+      <workItem from="1751359588219" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="init fastapi">
       <option name="closed" value="true" />
