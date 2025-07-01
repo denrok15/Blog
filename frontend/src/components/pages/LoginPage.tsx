@@ -15,7 +15,7 @@ export default function LoginPage() {
 
         e.preventDefault();
         try {
-            const responce = await axios.post('http://localhost:8080/login', {login: login, password: password});
+            const responce = await axios.post('http://127.0.0.1:8000/login', {login: login, password: password});
             navigate('/')
             auth.setAuth(
                 {
