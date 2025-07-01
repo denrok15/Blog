@@ -1,5 +1,6 @@
 import {useUserStore} from "../store/UserStore.ts";
 import {useState} from "react";
+import Header from "../items/Header.tsx";
 export default function ChangeProfilePage() {
     const [bioinput,setBioInput] = useState("");
     const [nameInput, setNameInput] = useState("");
@@ -20,6 +21,7 @@ export default function ChangeProfilePage() {
     }
     return (
         <>
+            <Header />
             <form onSubmit={handleSubmit}>
                 <input className={'mt-5 border border-black'}
                        type="text"

@@ -4,12 +4,14 @@ import MainPage from "./components/pages/MainPage.tsx";
 import RegisterPage from "./components/pages/RegistrPage.tsx";
 import ProfilePage from "./components/pages/ProfilePage.tsx";
 import ChangeProfilePage from "./components/pages/СhangeProfilePage.tsx";
+import HomePage from "./components/pages/HomePage.tsx";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<MainPage/>}/>
+                <Route path='/' element={<HomePage/>}/>
+                <Route path="/home" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/registr" element={<RegisterPage/>}/>
                 <Route path="/profile" element={<ProfilePage/>}/>

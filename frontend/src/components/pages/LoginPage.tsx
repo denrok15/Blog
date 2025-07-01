@@ -1,6 +1,7 @@
 import {useAuthStore} from "../store/AuthStore.ts";
 import {useState} from "react";
 import {useNavigate} from "react-router";
+import Header from "../items/Header.tsx";
 
 
 export default function LoginPage() {
@@ -26,33 +27,41 @@ export default function LoginPage() {
 
 
     return (
-        <div className={'flex justify-center mt-60  animate-fadeIn'}>
-            <form onSubmit={handesubmit} className={'bg-amber-50/60 shadow-xl rounded-2xl text-2xl p-15 '}>
-                <p className={'text-3xl text-center font-semibold'}>Вход</p>
-                <div className={'flex justify-center'}>
-                    <input type="text"
-                           placeholder="login"
-                           value={llogin}
-                           onChange={(e) => setLlogin(e.target.value)}
-                            className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
-                    />
-                </div>
-                <div className={'flex justify-center'}>
-                    <input type="password"
-                           placeholder="password"
-                           value={lpassword}
-                           onChange={(e) => setLpassword(e.target.value)}
-                           className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
-                    />
-                </div>
-                <div className={'flex justify-center'}>
-                    <button type={'submit'} className={'text-xl w-full mt-5 p-2 border rounded-2xl bg-green-400 hover:bg-green-500 transition ease-in'}>Войти в аккаунт</button>
-                </div>
+        <div className={'bg-[#F9F9FB] min-h-full'}>
+            <Header />
+            <div className={'flex justify-center mt-60  animate-fadeIn'}>
+                <form onSubmit={handesubmit} className={'bg-white shadow-xl rounded-2xl text-2xl p-15 '}>
+                    <p className={'text-3xl text-center font-semibold'}>Вход</p>
+                    <div className={'flex justify-center'}>
+                        <input type="text"
+                               placeholder="login"
+                               value={llogin}
+                               onChange={(e) => setLlogin(e.target.value)}
+                               className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
+                        />
+                    </div>
+                    <div className={'flex justify-center'}>
+                        <input type="password"
+                               placeholder="password"
+                               value={lpassword}
+                               onChange={(e) => setLpassword(e.target.value)}
+                               className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
+                        />
+                    </div>
+                    <div className={'flex justify-center'}>
+                        <button type={'submit'}
+                                className={'text-xl w-full mt-5 p-2 border rounded-2xl bg-green-400 hover:bg-green-500 transition ease-in'}>Войти
+                            в аккаунт
+                        </button>
+                    </div>
 
 
-                <p className={'text-center text-lg mt-5 hover:text-green-600 transition ease-in'}><a  href="/registr">Нет аккаунта? Зарегестрируйся!</a></p>
+                    <p className={'text-center text-lg mt-5 hover:text-green-600 transition ease-in'}><a
+                        href="/registr">Нет аккаунта? Зарегестрируйся!</a></p>
 
-            </form>
+                </form>
+            </div>
         </div>
+
     )
 }

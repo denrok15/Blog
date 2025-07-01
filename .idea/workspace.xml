@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="14c92c53-c8b9-417c-857c-8fb95d2fe937" name="Changes" comment="init fastapi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/MainPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/СhangeProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/СhangeProfilePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +57,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mosin/PycharmProjects/FastAPIProject2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mosin/PycharmProjects/Blogingstack&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,11 +65,17 @@
     &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/mosin/AppData/Roaming/JetBrains/WebStorm2024.3/node/versions/20.15.0/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.npm dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.project&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mosin\\PycharmProjects\\Blogingstack\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mosin\PycharmProjects\Blogingstack\frontend\public\icons" />
+      <recent name="C:\Users\mosin\PycharmProjects\Blogingstack\backend\app" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="npm dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
@@ -104,6 +113,9 @@
       <workItem from="1751236310729" duration="877000" />
       <workItem from="1751237887958" duration="2487000" />
       <workItem from="1751265274836" duration="3419000" />
+      <workItem from="1751276152546" duration="3225000" />
+      <workItem from="1751299113935" duration="11911000" />
+      <workItem from="1751359588219" duration="2268000" />
     </task>
     <task id="LOCAL-00001" summary="init fastapi">
       <option name="closed" value="true" />

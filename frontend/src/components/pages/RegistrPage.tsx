@@ -17,7 +17,7 @@ export default function RegistrPage() {
     };
 
     return (
-        <div className="flex justify-center mt-60">
+        <div className="flex justify-center mt-60 animate-fadeIn">
             <form onSubmit={handleSubmit} className="bg-amber-50/60 rounded-xl text-2xl p-15 shadow-xl">
                 <p className="text-3xl text-center font-semibold">Регистрация</p>
                 <input

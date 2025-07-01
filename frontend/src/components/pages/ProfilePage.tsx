@@ -1,6 +1,7 @@
 import {useAuthStore} from "../store/AuthStore.ts";
 import {useUserStore} from "../store/UserStore.ts";
 import {useNavigate} from "react-router";
+import Header from "../items/Header.tsx";
 
 export default function ProfilePage() {
     const {login, email} = useAuthStore()
@@ -18,6 +19,7 @@ export default function ProfilePage() {
     const navigate = useNavigate();
     return (
         <>
+            <Header />
             <div className={'flex justify-center bg-amber-50/60 mr-40 ml-40 '}>
                 <div>
                     <div className={'bg-blue-100 h-3/4 w-full'}>
