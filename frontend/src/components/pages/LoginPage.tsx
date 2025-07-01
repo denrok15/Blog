@@ -2,27 +2,33 @@ import {useAuthStore} from "../store/AuthStore.ts";
 import {useState} from "react";
 import {useNavigate} from "react-router";
 import Header from "../items/Header.tsx";
+import axios from "axios";
 
 
 export default function LoginPage() {
-    console.log('dsfdsfdsfsdfd')
     const navigate = useNavigate();
+    const [login, setlogin] = useState<string>('');
+    const [password, setpassword] = useState<string>('');
+    const auth = useAuthStore();
 
-    const [llogin, setLlogin] = useState<string>('');
-    const [lpassword, setLpassword] = useState<string>('');
-    const {login, password} = useAuthStore();
-    console.log(login, password)
-    const handesubmit =(e:React.FormEvent) => {
+    const handesubmit = async (e:React.FormEvent) => {
+
         e.preventDefault();
-        console.log('los')
-
-        if (login === llogin && password === lpassword) {
+        try {
+            const responce = await axios.post('http://localhost:8080/login', {login: login, password: password});
             navigate('/')
-            console.log('login');
+            auth.setAuth(
+                {
+                    login: responce.data.login
+                }
+            )
 
-        } else {
-            console.log('неверный логин или пароль');
+        } catch(err) {
+
+            console.log(err)
+
         }
+
     }
 
 
@@ -35,16 +41,16 @@ export default function LoginPage() {
                     <div className={'flex justify-center'}>
                         <input type="text"
                                placeholder="login"
-                               value={llogin}
-                               onChange={(e) => setLlogin(e.target.value)}
+                               value={login}
+                               onChange={(e) => setlogin(e.target.value)}
                                className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
                         />
                     </div>
                     <div className={'flex justify-center'}>
                         <input type="password"
                                placeholder="password"
-                               value={lpassword}
-                               onChange={(e) => setLpassword(e.target.value)}
+                               value={password}
+                               onChange={(e) => setpassword(e.target.value)}
                                className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
                         />
                     </div>
