@@ -10,7 +10,7 @@ export default function RegistrPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const responce = await axios.post('http://localhost:8080/register', {login, password});
+            const responce = await axios.post('http://127.0.0.1:8000/register', {login, password});
             auth.setAuth(
                 {
                     login: responce.data.login

@@ -12,7 +12,6 @@ export default function LoginPage() {
     const auth = useAuthStore();
 
     const handesubmit = async (e:React.FormEvent) => {
-
         e.preventDefault();
         try {
             const responce = await axios.post('http://127.0.0.1:8000/login', {login: login, password: password});
