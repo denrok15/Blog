@@ -27,7 +27,7 @@ export default function PostsPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="animate-fadeIn min-h-screen bg-gray-100">
             <Header/>
             <div className="container mx-auto px-4 py-8">
                 <CreatePost/>
@@ -35,11 +35,11 @@ export default function PostsPage() {
                     {posts.map((post, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                             <div className="p-6">
-                                <h3 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h3>
+                                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                                    <span>{post.user}</span> {post.title}</h3>
                                 <p className="text-gray-600 mb-4">{post.content}</p>
                                 <div className="flex justify-between text-sm text-gray-500">
-                                    <span>Автор: {post.user}</span>
-                                    <span>Лайков: {post.likes}</span>
+                                    <span> <img src="/icons/heart.svg" alt=""/>{post.likes}</span>
                                 </div>
                             </div>
                         </div>

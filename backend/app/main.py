@@ -66,3 +66,6 @@ async def post(data: PostSchema):
 @app.get("/posts", tags=["Posts"])
 async def get_posts() -> List[dict]:
     return posts
+@app.put('/like',tags=["Posts"])
+async def like_post(post: PostSchema):
+    return ...

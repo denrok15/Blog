@@ -4,8 +4,23 @@ import {useNavigate} from "react-router";
 import Header from "../items/Header.tsx";
 
 export default function ProfilePage() {
-    const {login, email} = useAuthStore()
-    const {bio,name,birthday,location,phone,gender,setBio,setName,setGender,setBirthday,setPhone,setLocation} = useUserStore()
+    const {login} = useAuthStore()
+    const {
+        bio,
+        name,
+        birthday,
+        location,
+        phone,
+        gender,
+        setBio,
+        setName,
+        setGender,
+        setBirthday,
+        setPhone,
+        setLocation
+    } = useUserStore()
+    const navigate = useNavigate();
+
     const logout = () => {
         setBio('')
         setLocation('')
@@ -14,43 +29,84 @@ export default function ProfilePage() {
         setGender('')
         setPhone('')
         navigate('/')
-
     }
-    const navigate = useNavigate();
+
     return (
-        <>
-            <Header />
-            <div className={'flex justify-center bg-amber-50/60 mr-40 ml-40 '}>
-                <div>
-                    <div className={'bg-blue-100 h-3/4 w-full'}>
-                        <a href="/change">Редактировать профиль</a>
+        <div className="animate-fadeIn min-h-screen bg-gray-50">
+            <Header/>
+
+
+            <div className="container mx-auto px-4 py-8 max-w-6xl">
+                <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                    <div className="bg-blue-100 p-6 flex justify-between items-center">
+                        <h1 className="text-3xl font-bold text-gray-800">{login}</h1>
+                        <div className="flex space-x-4">
+                            <a
+                                href="/change"
+                                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                            >
+                                Редактировать профиль
+                            </a>
+                            <button
+                                onClick={logout}
+                                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                            >
+                                Выйти из аккаунта
+                            </button>
+                        </div>
                     </div>
-                    <button onClick={logout}>Выйти из аккаунта</button>
-                    <h2>{login}</h2>
-
                 </div>
 
+
+                <div className="flex flex-col md:flex-row gap-6">
+
+                    <div className="bg-white p-6 rounded-xl shadow-md flex-1">
+                        <h4 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">About</h4>
+                        <div className="space-y-4">
+                            <div>
+                                <p className="text-sm text-gray-500">Биография</p>
+                                <p className="text-gray-700 mt-1">{bio || 'Не указано'}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Имя</p>
+                                <p className="text-gray-700 mt-1">{name || 'Не указано'}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Дата рождения</p>
+                                <p className="text-gray-700 mt-1">{birthday || 'Не указано'}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Местоположение</p>
+                                <p className="text-gray-700 mt-1">{location || 'Не указано'}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Пол</p>
+                                <p className="text-gray-700 mt-1">{gender || 'Не указано'}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">Телефон</p>
+                                <p className="text-gray-700 mt-1">{phone || 'Не указано'}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl shadow-md w-full md:w-1/3">
+                        <div className="flex flex-col space-y-4">
+                            <button
+                                className="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 text-left transition-colors">
+                                <span className="text-xl">Подписчики</span>
+                            </button>
+                            <button
+                                className="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 text-left transition-colors">
+                                <span className="text-xl">Подписки</span>
+                            </button>
+                            <button
+                                className="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 text-left transition-colors">
+                                <span className="text-xl">Посты</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <h4>{email}</h4>
-            <div className={'flex justify-start mt-25 ml-10 gap-15'}>
-                <div className={'bg-amber-50/60 p-5 w-1/8 rounded lg'}>
-                    <h4 className={'text-2xl font-semibold text-start'}>About</h4>
-                    <p className={'mt-5'}>{bio?bio:'Не указано'}</p>
-                    <p className={'mt-5'}>{name?name:'Не указано'}</p>
-                    <p className={'mt-5'}>{birthday?birthday:'Не указано'}</p>
-                    <p className={'mt-5'}>{location?location:'Не указано'}</p>
-                    <p className={'mt-5'}>{gender?gender:'Не указано'}</p>
-                    <p className={'mt-5'}>{phone?phone:'Не указано'}</p>
-                </div>
-                <div className={'bg-amber-50/60 p-5 w-1/4 rounded lg'}>
-                    <button className={'ml-3 text-xl'}>Подписчики</button>
-                    <button className={'ml-3 text-xl'}>Подписки</button>
-                    <button className={'ml-3 text-xl'}>Посты</button>
-                </div>
-
-            </div>
-
-        </>
+        </div>
     )
 }
