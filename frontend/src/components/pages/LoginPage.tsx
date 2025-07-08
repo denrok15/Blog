@@ -32,9 +32,9 @@ export default function LoginPage() {
 
 
     return (
-        <div className={'bg-[#F9F9FB] min-h-full'}>
+        <div className={'bg-[#F9F9FB] min-h-screen'}>
             <Header />
-            <div className={'flex justify-center mt-60  animate-fadeIn'}>
+            <div className={'flex justify-center mt-45  animate-fadeIn'}>
                 <form onSubmit={handesubmit} className={'bg-white shadow-xl rounded-2xl text-2xl p-15 '}>
                     <p className={'text-3xl text-center font-semibold'}>Вход</p>
                     <div className={'flex justify-center'}>

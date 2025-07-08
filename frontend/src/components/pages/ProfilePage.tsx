@@ -61,7 +61,7 @@ export default function ProfilePage() {
                 <div className="flex flex-col md:flex-row gap-6">
 
                     <div className="bg-white p-6 rounded-xl shadow-md flex-1">
-                        <h4 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">About</h4>
+                        <h4 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">Обо мне</h4>
                         <div className="space-y-4">
                             <div>
                                 <p className="text-sm text-gray-500">Биография</p>

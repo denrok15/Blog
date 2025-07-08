@@ -51,10 +51,11 @@ export default function Header() {
                 <div className={'flex justify-end gap-10'}> {isAuthenticated ?
                     <>
                         <button className="px-4 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors" onClick={logout}>Выход</button>
-                        <a className={'mt-1'} href="/profile">{login}</a>
+                        <a className={'mt-1'} href="/profile">
+                            {login}</a>
                     </>
                     : <button onClick={loginer}
-                              className="py-2 mr-6 px-7 border rounded-xl bg-[#3328BF] text-xl text-white font-semibold hover:bg-[#251D8F] transition">
+                              className="py-1.5 mr-6 px-6 border rounded-xl bg-[#3328BF] text-white font-semibold hover:bg-[#251D8F] transition">
                         Вход
                     </button>
                 }
