@@ -5,6 +5,7 @@ import RegisterPage from "./components/pages/RegistrPage.tsx";
 import ProfilePage from "./components/pages/ProfilePage.tsx";
 import ChangeProfilePage from "./components/pages/СhangeProfilePage.tsx";
 import HomePage from "./components/pages/HomePage.tsx";
+import PostsPage from "./components/pages/PostsPage.tsx";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/registr" element={<RegisterPage/>}/>
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/change" element={<ChangeProfilePage/>}/>
+                <Route path="/posts" element={<PostsPage/>}/>
             </Routes>
 
         </BrowserRouter>
