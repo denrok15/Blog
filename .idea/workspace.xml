@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14c92c53-c8b9-417c-857c-8fb95d2fe937" name="Changes" comment="init fastapi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/items/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/items/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/RegistrPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +115,7 @@
       <workItem from="1751490824438" duration="28000" />
       <workItem from="1751490867071" duration="500000" />
       <workItem from="1751491398041" duration="1379000" />
-      <workItem from="1751943084745" duration="11726000" />
+      <workItem from="1751943084745" duration="12551000" />
     </task>
     <task id="LOCAL-00001" summary="init fastapi">
       <option name="closed" value="true" />
