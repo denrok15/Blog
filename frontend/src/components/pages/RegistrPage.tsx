@@ -2,6 +2,7 @@ import {useAuthStore} from "../store/AuthStore";
 import {useState} from "react";
 import {useNavigate} from "react-router";
 import axios from "axios";
+import Header from "../items/Header.tsx";
 export default function RegistrPage() {
     const navigate = useNavigate();
     const [login, setLogin] = useState('');
@@ -24,11 +25,11 @@ export default function RegistrPage() {
 
         }
     }
-
-
     return (
-        <div className="flex justify-center mt-60 animate-fadeIn">
-            <form onSubmit={handleSubmit} className="bg-amber-50/60 rounded-xl text-2xl p-15 shadow-xl">
+        <div className={'bg-[#F9F9FB] min-h-screen'}>
+            <Header/>
+            <div className="flex justify-center mt-45 animate-fadeIn">
+            <form onSubmit={handleSubmit} className="bg-white rounded-xl text-2xl p-15 shadow-xl">
                 <p className="text-3xl text-center font-semibold">Регистрация</p>
                 <input
                     type="text"
@@ -55,5 +56,8 @@ export default function RegistrPage() {
                 </p>
             </form>
         </div>
+
+        </div>
+
     );
 }

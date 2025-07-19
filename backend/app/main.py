@@ -8,13 +8,24 @@ database = [
     {"login": "furry", "password": "oook"},
     {"login": "denis", "password": "lol"}
 ]
+posts = [
+    {'title': 'Ого', 'content': 'ok', 'user': 'admin', 'likes': 0},
+]
+
 
 class UserSchema(BaseModel):
     login: str
     password: str
 
-app = FastAPI()
 
+class PostSchema(BaseModel):
+    title: str
+    content: str
+    user: str
+    likes: int
+
+
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,6 +34,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.post("/login", tags=["Authorization"])
 async def login(data: UserSchema):
@@ -33,6 +45,7 @@ async def login(data: UserSchema):
             raise HTTPException(status_code=401, detail="Incorrect password")
     raise HTTPException(status_code=404, detail="User not found")
 
+
 @app.post("/register", tags=["Authorization"])
 async def register(data: UserSchema):
     if any(user["login"] == data.login for user in database):
@@ -40,6 +53,19 @@ async def register(data: UserSchema):
     database.append({"login": data.login, "password": data.password})
     return {"status": "ok", "login": data.login}
 
+
 @app.get("/users", tags=["Users"])
 async def get_users() -> List[dict]:
     return [{"login": user["login"]} for user in database]
+
+
+@app.post("/post", tags=["Posts"])
+async def post(data: PostSchema):
+    posts.append({"title": data.title, "content": data.content,'user': data.user, 'likes': data.likes})
+    return {"status": "ok"}
+@app.get("/posts", tags=["Posts"])
+async def get_posts() -> List[dict]:
+    return posts
+@app.put('/like',tags=["Posts"])
+async def like_post(post: PostSchema):
+    return ...
