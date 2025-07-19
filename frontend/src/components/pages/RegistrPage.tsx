@@ -1,23 +1,30 @@
 import {useAuthStore} from "../store/AuthStore";
-import {useState} from "react";
 import {useNavigate} from "react-router";
 import axios from "axios";
 import Header from "../items/Header.tsx";
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import {useForm} from "react-hook-form"
 export default function RegistrPage() {
+    const schema = yup.object({
+        login: yup.string().required('Логин обязателен'),
+        password: yup.string().required('Пароль обязателен')
+    })
+    type FormData = yup.InferType<typeof schema>;
+    const {register,handleSubmit, formState: {errors},reset} = useForm<FormData>({
+        resolver: yupResolver(schema)
+    })
     const navigate = useNavigate();
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
     const auth = useAuthStore();
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const onSubmit = async (data: FormData) => {
         try {
-            const responce = await axios.post('http://127.0.0.1:8000/register', {login, password});
+            const responce = await axios.post('http://127.0.0.1:8000/register', {login: data.login, password: data.password});
             auth.setAuth(
                 {
                     login: responce.data.login
                 }
-
             )
+            reset()
             navigate('/')
 
         } catch(err) {
@@ -29,24 +36,22 @@ export default function RegistrPage() {
         <div className={'bg-[#F9F9FB] min-h-screen'}>
             <Header/>
             <div className="flex justify-center mt-45 animate-fadeIn">
-            <form onSubmit={handleSubmit} className="bg-white rounded-xl text-2xl p-15 shadow-xl">
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-xl text-2xl p-15 shadow-xl">
                 <p className="text-3xl text-center font-semibold">Регистрация</p>
                 <input
                     type="text"
                     placeholder="Логин"
-                    value={login}
-                    onChange={(e) => setLogin(e.target.value)}
                     className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
-                    required
+                    {...register('login')}
                 />
+                {errors.login && <p className="text-red-500 text-sm mt-1">{errors.login.message}</p>}
                 <input
                     type="password"
                     placeholder="Пароль"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                     className={'hover:border-green-600 transition ease block border rounded-xl mt-5 p-2 placeholder:text-xl'}
-                    required
+                    {...register('password')}
                 />
+                {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
                 <button type="submit"
                         className={'text-xl w-full mt-5 p-2 border rounded-2xl bg-green-400 hover:bg-green-500 transition ease-in'}>
                     Зарегистрироваться
