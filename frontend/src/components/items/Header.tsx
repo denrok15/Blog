@@ -5,9 +5,12 @@ import {useAuthStore} from "../store/AuthStore.ts";
 export default function Header() {
     const [select, setSelect] = useState(0)
     const navigate = useNavigate();
-    const {isAuthenticated} = useAuthStore()
-    const login = () => {
+    const {isAuthenticated,login,clearAuth} = useAuthStore()
+    const loginer = () => {
         navigate("/login");
+    }
+    const logout = () => {
+        clearAuth();
     }
     return (
         <header className="w-full bg-[#F5F5FF] p-2">
@@ -35,8 +38,11 @@ export default function Header() {
                     </button>
                 </div>
                 {isAuthenticated ?
-                    <>Ти пидор</>
-                    : <button onClick={login}
+                    <>
+                        <button onClick={logout}>Выход</button>
+                        {login}
+                    </>
+                    : <button onClick={loginer}
                               className="py-2 mr-6 px-7 border rounded-xl bg-[#3328BF] text-xl text-white font-semibold hover:bg-[#251D8F] transition">
                         Вход
                     </button>
