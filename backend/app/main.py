@@ -1,28 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from typing import List
+from database.database import database,posts
+from schemas.user import UserSchema
+from schemas.posts import PostSchema
 
-database = [
-    {"login": "admin", "password": "1234"},
-    {"login": "furry", "password": "oook"},
-    {"login": "denis", "password": "lol"}
-]
-posts = [
-    {'title': 'Ого', 'content': 'ok', 'user': 'admin', 'likes': 0},
-]
-
-
-class UserSchema(BaseModel):
-    login: str
-    password: str
-
-
-class PostSchema(BaseModel):
-    title: str
-    content: str
-    user: str
-    likes: int
 
 
 app = FastAPI()
@@ -67,5 +49,18 @@ async def post(data: PostSchema):
 async def get_posts() -> List[dict]:
     return posts
 @app.put('/like',tags=["Posts"])
-async def like_post(post: PostSchema):
-    return ...
+async def like_post(data: PostSchema):
+    for post in posts:
+        if data.title == post["title"] and data.user == post["user"]:
+            post["likes"] += 1
+
+    raise HTTPException(status_code=404, detail="Post not found")
+
+
+@app.put('/deletelike', tags=["Posts"])
+async def deletelike_post(data: PostSchema):
+    for post in posts:
+        if data.title == post["title"] and data.user == post["user"]:
+            post["likes"] -= 1
+
+    raise HTTPException(status_code=404, detail="Post not found")
