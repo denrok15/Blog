@@ -23,5 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "client/App.tsx",
+    "client/api",
+    "client/main.tsx",
+    "client/vite-env.d.ts"
+  ]
 }
