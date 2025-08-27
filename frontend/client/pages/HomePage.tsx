@@ -1,9 +1,11 @@
 import { Header } from "client/components";
 import { useNavigate } from "react-router";
 import { IconCalendar, IconUser } from "client/icons";
+import { useTranslation } from "react-i18next";
 
 export function HomePage() {
   const navigate = useNavigate();
+  const { t } = useTranslation("HomePage");
   const lets_start = () => {
     navigate("/login");
   };
@@ -34,7 +36,7 @@ export function HomePage() {
         </div>
         <div className="flex justify-center gap-8 my-10">
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-xs">
-            <h3 className="font-bold text-xl mb-2">Молниеносные новости</h3>
+            <h3 className="font-bold text-xl mb-2">{t("news")}</h3>
             <p>Получай обновления раньше всех - наши авторы работают 24/7</p>
           </div>
 

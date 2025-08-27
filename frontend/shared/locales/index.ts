@@ -1,0 +1,1 @@
+export { HomePageTranslations } from "./HomePage";
