@@ -1,10 +1,10 @@
-import Header from "../items/Header.tsx";
+import { Header } from "client/components";
 
-export default function MainPage() {
-    return (
-        <>
-            <Header />
-            <a href="/profile">ЗАХОДИ В ПРОФИЛЬ</a>
-        </>
-    )
+export function MainPage() {
+  return (
+    <>
+      <Header />
+      <a href="/profile">ЗАХОДИ В ПРОФИЛЬ</a>
+    </>
+  );
 }

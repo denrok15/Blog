@@ -1,8 +1,8 @@
-import Header from "../items/Header.tsx";
+import { Header } from "client/components";
 import { useNavigate } from "react-router";
-import { IconCalendar } from "../../icons/IconCalendar.tsx";
-import { IconUser } from "../../icons/IconUser.tsx";
-export default function HomePage() {
+import { IconCalendar, IconUser } from "client/icons";
+
+export function HomePage() {
   const navigate = useNavigate();
   const lets_start = () => {
     navigate("/login");

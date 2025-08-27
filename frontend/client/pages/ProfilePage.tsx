@@ -1,9 +1,9 @@
 import { useAuthStore } from "../store/AuthStore.ts";
 import { useUserStore } from "../store/UserStore.ts";
 import { useNavigate } from "react-router";
-import Header from "../items/Header.tsx";
+import { Header } from "client/components";
 
-export default function ProfilePage() {
+export function ProfilePage() {
   const { login } = useAuthStore();
   const {
     bio,

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import { useAuthStore } from "../store/AuthStore.ts";
-import { IconLogo } from "../icons/IconLogo.tsx";
+import { IconLogo } from "client/icons";
 export function Header() {
   const [select, setSelect] = useState(0);
   const navigate = useNavigate();

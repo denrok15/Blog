@@ -1,4 +1,4 @@
-export default function SettingsPage() {
+export function SettingsPage() {
   return (
     <div className={"animate-fadeIn"}>
       <div className={"flex justify-center bg-gray-200"}>
