@@ -20,6 +20,8 @@ venv/
 env/
 
 # Node
+stats.html
+dist/
 node_modules/
 *storybook.log
 storybook-static
