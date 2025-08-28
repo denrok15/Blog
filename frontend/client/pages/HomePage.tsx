@@ -22,9 +22,10 @@ export function HomePage() {
             BlogSprout
           </span>
         </div>
-        <h4 className={"mt-3 text-center text-5xl font-semibold"}>
-          Узнавай интересные новости <br /> самым первым!
-        </h4>
+        <h2 className={"mt-3 text-center text-6xl font-semibold"}>
+          Узнавай интересные <span className="text-indigo-600">новости </span>
+          <br /> самым первым!
+        </h2>
         <span className={"flex justify-center text-center mt-5 font-semibold"}>
           <IconUser />
           От Данила Жилина
@@ -32,11 +33,15 @@ export function HomePage() {
           23 июля, 15 секунд назад
         </span>
         <div className={"flex justify-center"}>
-          <img className={"mt-10 h-100 w-200"} src="/icons/Novost.png" alt="" />
+          <img
+            className={"mt-10 h-100 w-200"}
+            src="../imgs/Novost.png"
+            alt=""
+          />
         </div>
         <div className="flex justify-center gap-8 my-10">
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-xs">
-            <h3 className="font-bold text-xl mb-2">{t("news")}</h3>
+            <h3 className="font-bold text-xl mb-2"> {t("news")}</h3>
             <p>Получай обновления раньше всех - наши авторы работают 24/7</p>
           </div>
 
@@ -65,25 +70,6 @@ export function HomePage() {
           Оставляй комментарии и лайки
           <br /> тем кто понравится
         </h4>
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl max-w-md mx-auto mt-10">
-          <div className="flex items-center mb-4">
-            <IconCalendar />
-            <div>
-              <h3 className="ml-2 font-bold text-xl">Елена К.</h3>
-              <p className="ml-2 text-yellow-600 font-semibold">
-                Топ-комментатор недели
-              </p>
-            </div>
-          </div>
-          <p className="italic mb-4">
-            "Обожаю делиться своими мыслями и находить единомышленников здесь!"
-          </p>
-          <div className="flex justify-between text-sm">
-            <span>🔹 124 комментария</span>
-            <span>🔹 89 лайков</span>
-            <span>🔹 3 топ-обсуждения</span>
-          </div>
-        </div>
         <div className="flex justify-center gap-8 my-12">
           <div className="text-center max-w-xs">
             <div className="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl font-bold mb-4">

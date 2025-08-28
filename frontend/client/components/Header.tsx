@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router";
 import { useAuthStore } from "../store/AuthStore.ts";
 import { IconLogo } from "client/icons";
 export function Header() {
-  const [select, setSelect] = useState(0);
+  const location = useLocation();
   const navigate = useNavigate();
   const { isAuthenticated, login, clearAuth } = useAuthStore();
   const loginer = () => {
@@ -23,13 +22,14 @@ export function Header() {
         <div className="flex justify-center gap-15 bg-white px-10 py-2 rounded-lg">
           <button
             onClick={() => {
-              setSelect(1);
               navigate("/");
             }}
           >
             <div
               className={`cursor-pointer  ${
-                select === 1 ? "border-[#3328BF] border-b-2 " : null
+                location.pathname === "/"
+                  ? "border-[#3328BF] border-b-2 "
+                  : null
               } hover:text-[#3328BF]`}
             >
               Домой
@@ -37,27 +37,29 @@ export function Header() {
           </button>
           <button
             onClick={() => {
-              setSelect(2);
               navigate("/posts");
             }}
           >
             <div
               className={`cursor-pointer ${
-                select === 2 ? "border-[#3328BF] border-b-2 " : null
+                location.pathname === "/posts"
+                  ? "border-[#3328BF] border-b-2 "
+                  : null
               }  hover:text-[#3328BF] transition`}
             >
-              Документация
+              Лента
             </div>
           </button>
           <button
             onClick={() => {
-              setSelect(3);
               navigate("/settings");
             }}
           >
             <div
               className={`cursor-pointer ${
-                select === 3 ? "border-b-2 border-[#3328BF]" : null
+                location.pathname === "/settings"
+                  ? "border-b-2 border-[#3328BF]"
+                  : null
               }   hover:text-[#3328BF] transition`}
             >
               Настройки
@@ -65,7 +67,6 @@ export function Header() {
           </button>
         </div>
         <div className={"flex justify-end gap-10"}>
-          {" "}
           {isAuthenticated ? (
             <>
               <button

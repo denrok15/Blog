@@ -1,9 +1,9 @@
-import { Header, CreatePost } from "client/components";
+import { Header, CreatePost, Post } from "client/components";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "../store/AuthStore.ts";
 
-interface Post {
+export interface Post {
   title: string;
   content: string;
   user: string;
@@ -49,30 +49,7 @@ export function PostsPage() {
       {isAuthenticated ? (
         <div className="container mx-auto px-4 py-8">
           <CreatePost />
-          <div className="mt-8 space-y-6">
-            {posts.map((post, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    <span>{post.user}</span> {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{post.content}</p>
-                  <div className="flex justify-between text-sm text-gray-500">
-                    <button onClick={() => savelike(post)}>
-                      <span>
-                        {" "}
-                        <img src="/icons/heart.svg" alt="" />
-                        {post.likes}
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Post posts={posts} saveLike={savelike} />
         </div>
       ) : (
         <div>Авторизируйся чтобы видеть посты других пользователей</div>
