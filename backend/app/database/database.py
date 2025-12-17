@@ -1,8 +1,14 @@
-database = [
-    {"login": "admin", "password": "1234"},
-    {"login": "furry", "password": "oook"},
-    {"login": "denis", "password": "lol"}
-]
-posts = [
-    {'title': 'Ого', 'content': 'ok', 'user': 'admin', 'likes': 0},
-]
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+from config import settings
+
+
+engine = create_engine(settings.database_url, future=True)
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
+    future=True,
+)
+Base = declarative_base()
